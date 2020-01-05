@@ -7,12 +7,12 @@ public class IA implements AC {
 
 	List<AC> ACList= new ArrayList<AC>();
 
-	public void showDetails() //afiseaza detalii despre componenta IA
+	public void showDetails() //afiseaza detalii despre componenta(sau componentele) IA
 	{
-		//if(instanceOf(this)==Sia())
 		for(AC comp:ACList)
 		{
 			comp.showDetails();
+			//System.out.println(comp.toString());
 		}
 	}
 	
@@ -24,6 +24,11 @@ public class IA implements AC {
 	public void removeAC(AC comp)//sterge componenta IA
 	{
 		ACList.remove(comp);
+	}
+	
+	public List<AC> getAC()
+	{
+		return ACList;
 	}
 
 

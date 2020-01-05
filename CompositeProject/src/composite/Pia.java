@@ -11,9 +11,16 @@ public class Pia implements AC{
 		this.id=id1;
 		this.course=c;
 	}
+	
+	//afiseaza detaliile despre profesor IA
 	public void showDetails() {
 		System.out.println("id:"+id+"\t"+"Name: "+name+"\t"+"Course: "+course);
 	}
 	
+	@Override
+	public String toString() {
+		//this.showDetails();
+		return new String("id:"+id+"\t"+"Name: "+name+"\t"+"Course: "+course);
+	}
 
 }

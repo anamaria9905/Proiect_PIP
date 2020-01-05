@@ -9,8 +9,16 @@ public class Pa implements AC {
 		this.id=id1;
 		this.course=c;
 	}
+	
+	//afiseaza detaliile despre profesor A
 	public void showDetails() {
 		System.out.println("id:"+id+"\t"+"Name: "+name+"\t"+"Course: "+course);
+	}
+	
+	@Override
+	public String toString() {
+		//this.showDetails();
+		return "id:"+id+"\t"+"Name: "+name+"\t"+"Course: "+course;
 	}
 
 }

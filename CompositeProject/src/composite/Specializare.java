@@ -1,8 +1,20 @@
 package composite;
 
+
 public class Specializare {
+	
+	public static IA InfoAplicataS= new IA();
+	public static IA InfoAplicataP= new IA();
+	public static IA InfoAplicata= new IA();
+	public static A AutomaticaS=new A();
+	public static A AutomaticaP=new A();
+	public static A Automatica=new A();
+	public static IS IngSis=new IS();
+	
 
 	public static void main(String[] args) {
+		
+		//declarare si initializare studenti si profesori
 		Sia sia1= new Sia("Popescu Ion",1);
 		Sia sia2= new Sia("Ionescu Vasile",2);
 		Pia pia1=new Pia("Onea Alexandru",11,"Sisteme Automate cu Esantionare");
@@ -13,36 +25,48 @@ public class Specializare {
 		Pa pa2=new Pa("Postolache Mihai",14,"Sisteme cu microprocesoare");
 		
 		
+		//realizarea arborelui composite
 		
-		IA InfoAplicataS= new IA();
+		//lista cu studenti de la Informatica Aplicata
+		
 		InfoAplicataS.addAC(sia1);
 		InfoAplicataS.addAC(sia2);
 		
-		IA InfoAplicataP= new IA();
+		//lista cu profesori de la Informatica Aplicata
+		
 		InfoAplicataP.addAC(pia1);
 		InfoAplicataP.addAC(pia2);
 		
-		IA InfoAplicata= new IA();
+		//lista cu studenti si profesori de la Informatica Aplicata, realizata prin adaugarea intr-o noua liste a celor doua liste deja create mai sus
+		//avantaj structura arbore composite
+		
 		InfoAplicata.addAC(InfoAplicataS);
 		InfoAplicata.addAC(InfoAplicataP);
 		
-		A AutomaticaS=new A();
+		//lista cu studenti de la Automatica
+		
 		AutomaticaS.addAC(sa1);
 		AutomaticaS.addAC(sa2);
 		
-		A AutomaticaP=new A();
+		//lista cu profesori de la Automatica
+		
 		AutomaticaP.addAC(pa1);
 		AutomaticaP.addAC(pa2);
 		
-		A Automatica=new A();
+		//lista cu studenti si profesori de la Automatica, realizata prin adaugarea intr-o noua lista a celor doua liste deja create mai sus
+		
 		Automatica.addAC(AutomaticaS);
 		Automatica.addAC(AutomaticaP);
 		
-		IS IngSis=new IS();
+		//lista cu studenti si profesori de la ambele specializari
+		
 		IngSis.addAC(InfoAplicata);
 		IngSis.addAC(Automatica);
 		IngSis.showDetails();
 		
+		//System.out.println(IngSis.toString());
+		
+		//aplicatie grafica pentru prezentarea intr-un mod interactiv a exemplului creat
 		Grafic g = new Grafic();
 		g.initialize();
 		

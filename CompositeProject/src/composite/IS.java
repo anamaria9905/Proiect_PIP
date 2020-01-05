@@ -7,10 +7,12 @@ public class IS implements AC{
 
 	List<AC> ACList= new ArrayList<AC>();
 
+	//afiseaza detalii despre componentele(una-obiect propriu-zis, sau mai multe) listei IS
 	public void showDetails() {
 		for(AC comp:ACList)
 		{
 			comp.showDetails();
+			//System.out.println(comp.toString());
 		}
 	}
 
